@@ -1,0 +1,28 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="qtquickcontrols2.conf">qtquickcontrols2.conf</file>
+        <file>images/cogs.svg</file>
+        <file>images/contextual-menu.svg</file>
+        <file>images/navigation-menu.svg</file>
+        <file>images/go-next.svg</file>
+        <file>images/go-previous.svg</file>
+        <file>images/go-up.svg</file>
+        <file>images/close.svg</file>
+        <file>images/delete.svg</file>
+        <file>images/dialog-error-symbolic.svg</file>
+        <file>images/dialog-question-symbolic.svg</file>
+        <file>images/dialog-warning-symbolic.svg</file>
+        <file>images/important.svg</file>
+        <file>images/add.svg</file>
+        <file>images/info.svg</file>
+        <file>images/go-down.svg</file>
+        <file>main.qml</file>
+        <file>CompassSensor.qml</file>
+        <file>SensorPage.qml</file>
+        <file>SensorToolbar.qml</file>
+        <file>StyleLight.qml</file>
+        <file>Units.qml</file>
+        <file>images/compass-360-d.svg</file>
+        <file>images/compass-360-l.svg</file>
+    </qresource>
+</RCC>
