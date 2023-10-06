@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020
+ * Copyright (C) 2020-2023
  *      Jean-Luc Barriere <jlbarriere68@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
@@ -50,22 +50,9 @@ ApplicationWindow {
 
     Item {
         id: palette
-        property color base: {
-//            if (settings.style === "Material") {
-//                return Material.background
-//            } else if (settings.style === "Universal") {
-//                return Universal.background
-//            } else return "white"
-            return "black";
-        }
-        property color text: {
-//            if (settings.style === "Material") {
-//                return Material.foreground
-//            } else if (settings.style === "Universal") {
-//                return Universal.foreground
-//            } else return "black"
-            return "white"
-        }
+        property color base: "black"
+        property color text: "white"
+
         property color highlight: "gray"
         property color shadow: "black"
         property color brightText: "dimgray"
@@ -111,7 +98,7 @@ ApplicationWindow {
 
     Connections {
         target: Qt.application
-        onStateChanged: {
+        function onStateChanged() {
             switch (Qt.application.state) {
             case Qt.ApplicationSuspended:
             case Qt.ApplicationInactive:
@@ -184,9 +171,7 @@ ApplicationWindow {
     ////
 
     onApplicationSuspendedChanged: {
-        //if (!applicationSuspended) {
-        //} else {
-        //}
+        // no trigger
     }
 
     Component.onCompleted: {
@@ -199,6 +184,9 @@ ApplicationWindow {
         compass.active = true;
     }
 
+    // encapsulate the main Sensor
+    // the signal polled is triggered on azimut changed
+    // triggering rate is limited to 200ms
     CompassSensor {
         id: compass
         active: false

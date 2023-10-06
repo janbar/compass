@@ -13,7 +13,7 @@ find_package(Qt5Svg REQUIRED)
 find_package(Qt5Sensors REQUIRED)
 find_package(Qt5Positioning REQUIRED)
 
-set(QT_MIN_VERSION 5.12.0)
+set(QT_MIN_VERSION 5.15.2)
 find_package(Qt5QuickControls2 ${QT_MIN_VERSION} REQUIRED)
 
 if(ANDROID)

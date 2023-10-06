@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020
+ * Copyright (C) 2020-2023
  *      Jean-Luc Barriere <jlbarriere68@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
@@ -83,7 +83,7 @@ Page {
 
                 Connections {
                     target: compass
-                    onPolled: {
+                    function onPolled(azimuth, rotation) {
                         compassForeground.rotation = rotation * 180.0 / Math.PI;
                         mainView.pageTitle = Math.round(azimuth).toString() + "°";
                     }
