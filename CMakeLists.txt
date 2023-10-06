@@ -54,14 +54,11 @@ install(
   DESTINATION ${APPDATA_DIR} RENAME ${APP_ID}.appdata.xml
 )
 
+find_package(Qt5 COMPONENTS Core REQUIRED)
 add_subdirectory(gui)
+
 if(ANDROID)
-  configure_file(
-    ${CMAKE_SOURCE_DIR}/android/AndroidManifest.xml.in
-    ${CMAKE_SOURCE_DIR}/android/package-sources/AndroidManifest.xml
-  )
   include(android/AddQtAndroidApk.cmake)
-  #add_dependencies(compass-gui crypto ssl)
   add_qt_android_apk(compass-apk compass-gui
       NAME ${APP_NAME}
       VERSION_CODE ${APP_VERSION_CODE}
