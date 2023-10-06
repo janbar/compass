@@ -1,8 +1,8 @@
 project(compass C CXX)
 cmake_minimum_required(VERSION 3.1.0)
 
-set(APP_VERSION       "0.1.0")
-set(APP_VERSION_CODE  1)
+set(APP_VERSION       "1.1.0")
+set(APP_VERSION_CODE  3)
 set(APP_NAME          "compass")
 set(APP_ID            "io.github.janbar.compass")
 set(EXEC              "compass")
