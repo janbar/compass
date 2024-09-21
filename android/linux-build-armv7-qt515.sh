@@ -3,13 +3,13 @@ rm -rf $BUILD_DIR/*
 mkdir -p $BUILD_DIR
 
 export PLATFORM_LEVEL=29
-export JAVA_HOME=/home/shared/java/jdk1.8.0
-export ANDROID_SDK=/home/shared/Android/Sdk
-export ANDROID_NDK=/home/shared/Android/Sdk/ndk/22.1.7171670
+export JAVA_HOME=$HOME/bin/java/jdk-17.0.12
+export ANDROID_SDK=$HOME/bin/android/sdk
+export ANDROID_NDK=$HOME/bin/android/sdk/ndk/22.1.7171670
 export ANDROID_NATIVE_API_LEVEL=24
 export ANDROID_SDK_MINVER=24
 export ANDROID_SDK_TARGET=26
-export QT_DIR=/home/shared/Qt/5.15.2/android
+export QT_DIR=$HOME/bin/Qt/5.15.15/android
 
 cmake .. -B $BUILD_DIR -DCMAKE_SYSTEM_NAME=Android \
 -DCMAKE_PREFIX_PATH=$QT_DIR \
@@ -22,6 +22,7 @@ cmake .. -B $BUILD_DIR -DCMAKE_SYSTEM_NAME=Android \
 -DANDROID_SDK_MINVER=$ANDROID_SDK_MINVER \
 -DANDROID_SDK_TARGET=$ANDROID_SDK_TARGET \
 -DANDROID_NATIVE_API_LEVEL=$ANDROID_NATIVE_API_LEVEL \
+-DANDROID_SDK_BUILD_TOOLS_REVISION="28.0.3" \
 -DQT_ANDROID_PLATFORM_LEVEL=$PLATFORM_LEVEL \
 -DQT_ANDROID_TOOL_PREFIX="arm-linux-androideabi" \
 -DQT_ANDROID_SDK_ROOT=$ANDROID_SDK \
